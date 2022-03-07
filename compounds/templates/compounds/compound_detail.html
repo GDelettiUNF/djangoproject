@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+        <title>Cheminformatics Compounds</title>
+    </head>
+<header>
+    <h1><a href="/">Cheminformatics Compounds</a></h1>
+</header>
+
+<article>
+    {% if compound.published_date %}
+        <time>
+            Created: {{ compound.published_date }}
+        </time>
+    {% endif %}
+    <h2>{{ compound.IUPAC_name }}</h2>
+    <p>CASRN: {{ compound.CASRN }}</p>
+    <p>SMILES: {{ compound.SMILES }}</p>
+    <p>InChI: {{ compound.InChI }}</p>
+    <p>InChIKey: {{ compound.InChIKey }}</p>
+    <h2><a href="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{{ compound.SMILES }}/">PubChem</a></h2>
+</article>

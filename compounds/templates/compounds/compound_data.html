@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+        <title>Cheminformatics Compound Data</title>
+    </head>
+<header>
+    <h1><a href="/">Cheminformatics Compound Data</a></h1>
+</header>
+
+{% for compound in compound_data %}
+
+    <article>
+        <h2><a href="{% url 'compound_detail' pk=compound.pk %}">{{ compound.IUPAC_name }}</a></h2>
+        <p>IUPAC Name: {{ compound.IUPAC_name }}</p>
+        <p>MolWeight: {{ compound.molecular_weight }}</p>
+        <p>BPoint: {{ compound.boiling_point }}</p>
+        <p>MPoint: {{ compound.melting_point }}</p>
+        <p>Solubility: {{ compound.solubility }}</p>
+        <p>Density: {{ compound.density }}</p>
+    </article>
+{% endfor %}
